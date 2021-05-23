@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Interactive Metaballs - Isaac McNutt</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script type="module" src="src/loader.js"></script>
+
+</head>
+
+<body>
+    <canvas>
+        This browser does not support canvas!
+    </canvas>
+    <div class="controls">
+        <section class="instructions">
+            <h4>Instructions: </h4>
+            <p>Welcome to Interactive Meta-Balls! There are many controls for interacting with the Meta-Balls and a few of those are somewhat hidden!</p>
+            <p>- Clicking will place a new ball onto the canvas! (You can control what kind of ball is created down in Create Ball Settings!)</p>
+            <p>- Clicking on a ball will display that balls information!</p>
+            <p>- Clicking on a ball and dragging will allow the player to change the balls velocity! (How it is changed is controlable down in mouse settings!)</p>
+            <p>Tips:</p>
+            <p>- Make sure that you are clicking and unclicking while the mouse is on the canvas! Some functionality breaks if the mouse exit while its occuring!</p>
+        </section>
+        <section class="canvas-controls">
+            <h4>Canvas Settings:</h4>
+            <input type="checkbox" id="cbDrawBlobs" checked class="checkbox" title="Draws in front of all other drawing options!">
+            <label for="cbDrawBlobs" title="Draws in front of all other drawing options!">Draw Blobs</label>
+            <input type="checkbox" id="cbDrawBalls" checked class="checkbox" title="Draws below everything!">
+            <label for="cbDrawBalls" title="Draws below everything!">Draw Balls</label>
+            <input type="checkbox" id="cbDrawNodes" checked class="checkbox" title="Draws above Squares, and Node Weights, however shares a color so hard to see!">
+            <label for="cbDrawNodes" title="Draws above Squares, and Node Weights, however shares a color so hard to see!">Draw Nodes</label>
+            <input type="checkbox" id="cbDrawNodeWeights" checked class="checkbox" title="Draws above Squares however, is hard to see when Squares is active!">
+            <label for="cbDrawNodeWeights" title="Draws above Squares however, is hard to see when Squares is active!">Draw Node Weights</label>
+            <input type="checkbox" id="cbDrawSquares" checked class="checkbox" title="Draws the squares that make up the Marching Sqaures grid!">
+            <label for="cbDrawSquares" title="Draws the squares that make up the Marching Sqaures grid!">Draw Squares</label>
+            <input type="checkbox" id="cbDrawSquareCosts" checked class="checkbox" title="Draws the squares Marching Sqaure cost, which is a value based off the location of the ball!">
+            <label for="cbDrawSquareCosts" title="Draws the squares Marching Sqaure cost, which is a value based off the location of the ball!">Draw Square Costs</label>
+            <input type="checkbox" id="cbDrawAntiNodes" class="checkbox" title="Draws above most things but is hard to see when squares is active as it shares the colors.">
+            <label for="cbDrawAntiNodes" title="Draws above most things but is hard to see when squares is active as it shares the colors.">Draw AntiNodes</label>
+        </section>
+        <section class="metaballs-controls">
+            <h4>MetaBalls Settings:</h4>
+            <button id="btnRefresh">Refresh Meta-Balls!</button>
+            <label for="nmbResolution" class="lable">Resolution:</label>
+            <input type="number" min="4" max="128" id="nmbResolution" value=16>
+            <label for="nmbBalls" class="lable">Ball Count:</label>
+            <input type="number" min="1" max="16" id="nmbBalls" value=4>
+            <label for="selWrapMode" class="lable">Wrap Mode:</label>
+            <select id="selWrapMode">
+                <option value="bounce">Bounce</option>
+                <option value="wrap">Wrap</option>
+                <option value="delete">Delete</option>
+            </select>
+        </section>
+        <section class="mouse-controls">
+            <h4>Mouse Settings:</h4>
+            <label for="sldrLaunchStr">Launch Strength:</label>
+            <input type="range" min=0 max=100 id="sldrLaunchStr" value="10">
+            <h4>Create Ball Settings:</h4>
+            <label for="nmbBallRadius">Ball Radius:</label>
+            <input type="number" min="10" max="100" id="nmbBallRadius" value=50>
+            <label for="clrBallColor">Ball Color:</label>
+            <input type="color" id="clrBallColor" value="#ff0000">
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto-Black.ttf);
+}
+
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Roboto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    margin:25px;
+}
+
+canvas {
+    max-width: 600px;
+    max-height: 600px;
+
+    border:1px;
+    border-style: solid;
+}
+
+.controls {
+    margin-left: 25px;
+    max-width: 500px;
+}
+.metaballs-controls .lable {
+    padding-left: 10px;
+}
+
+h4 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin-top: 0;
+}
+
+@media (max-width: 1100px) {
+    body {
+        flex-direction: column;
+    }
+}
